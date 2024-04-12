@@ -94,6 +94,10 @@ defmodule RetWeb.Router do
     get "/", HealthController, :index
   end
 
+  scope "/custom", RetWeb do
+    get "/", CustomController, :index
+  end
+
   scope "/api/postgrest" do
     pipe_through [:secure_headers, :auth_required, :admin_required, :proxy_api]
 
