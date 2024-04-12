@@ -1,4 +1,4 @@
-name: ret
+name: ret-origin
 on:
   push:
     branches:
