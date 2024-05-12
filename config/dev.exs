@@ -206,3 +206,7 @@ config :ret, Ret.Locking, lock_timeout_ms: 1000 * 60 * 15
 config :ret, Ret.Repo.Migrations.AdminSchemaInit, postgrest_password: "password"
 config :ret, Ret.StatsJob, node_stats_enabled: false, node_gauges_enabled: false
 config :ret, Ret.Coturn, realm: "ret"
+
+config :ret, Ret.TRTCUserSig,
+  trtc_sdk_app_id: System.get_env("TRTC_SDK_APP_ID", ""),
+  trtc_sdk_secret_key: System.get_env("TRTC_SDK_SECRET_KEY", "")

@@ -301,6 +301,14 @@ realm = "{{ cfg.turn.realm }}"
 public_tls_ports = "{{ cfg.turn.public_tls_ports }}"
 {{/if}}
 
+[ret."Elixir.Ret.TRTCUserSig"]
+{{#if cfg.trtc_user_sig.sdk_app_id }}
+trtc_sdk_app_id = "{{ cfg.trtc_user_sig.sdk_app_id }}"
+{{/if}}
+{{#if cfg.trtc_user_sig.sdk_secret_key }}
+trtc_sdk_secret_key = "{{ cfg.trtc_user_sig.sdk_secret_key }}"
+{{/if}}
+
 [web_push_encryption.vapid_details]
 subject = "{{ cfg.web_push.subject }}"
 public_key = "{{ cfg.web_push.public_key }}"
@@ -314,4 +322,3 @@ hostname_dns_suffix = "{{ cfg.run.hostname_dns_suffix }}"
 
 [hackney]
 max_connections = {{ cfg.hackney.max_connections }}
-
