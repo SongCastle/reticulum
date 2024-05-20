@@ -197,7 +197,15 @@ defmodule RetWeb.Plugs.AddCSP do
         ret_direct_connect,
         storage_url,
         thumbnail_url,
-        "https://raw.githubusercontent.com"
+        "https://raw.githubusercontent.com",
+        ### Start TRTC ###
+        "signailing.rtc.tencentcloud.com",
+        "schedule.rtc.tencentcloud.com",
+        "*.rtc.tencentcloud.com",
+        "apisgp.my-imcloud.com",
+        "wss://*.rtc-web.com",
+        "wss://*.rtc-web.io"
+        ### End TRTC ###
       ],
       "img-src" => [
         "'self'",

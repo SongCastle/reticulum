@@ -725,6 +725,15 @@ defmodule RetWeb.HubChannel do
     end
   end
 
+  def handle_in("init_trtc", %{"session_id" => session_id} = payload, socket) do
+    params =
+      %{}
+      |> Map.put(:user_sig, Ret.TRTCUserSig.generate(%{ userid: session_id }))
+      |> Map.put(:sdk_app_id, Ret.TRTCUserSig.sdk_app_id())
+
+    {:reply, {:ok, params}, socket}
+  end
+
   def handle_in(_message, _payload, socket) do
     {:noreply, socket}
   end
